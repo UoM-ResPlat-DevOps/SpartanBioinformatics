@@ -1,17 +1,17 @@
-# SpartanIntro
-An four hour training course that provides an introduction to the Spartan HPC/Cloud hybrid and an introduction to the Linux command line.
+# SpartanBioinformatics
+A two day, eight-hour training course that provides an introduction to the Spartan HPC/Cloud hybrid and an introduction to the Linux command line with a Bioinformatics focus.
 
 ## Git
 
 If you check this repository out be aware that it uses Git submodules to manage the reveal.js dependency. To also checkout reveal.js, you will have to either:
 
 ### fetch it all in one hit
-`git clone --recursive https://github.com/UoM-ResPlat-DevOps/SpartanIntro`
+`git clone --recursive https://github.com/UoM-ResPlat-DevOps/SpartanBioinformatics`
 
 Or:
 
 ### take it step by step
-`git clone https://github.com/UoM-ResPlat-DevOps/SpartanIntro`
+`git clone https://github.com/UoM-ResPlat-DevOps/SpartanBioinformatics`
 `git submodule init`
 `git submodule update`
 
