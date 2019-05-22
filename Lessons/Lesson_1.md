@@ -9,10 +9,10 @@
 
 -- *Slide* --
 ### Slide Respository
-* A copy of these slides and sample code is available at: `https://github.com/UoM-ResPlat-DevOps/SpartanIntro`
+* A copy of these slides and sample code is available at: `https://github.com/UoM-ResPlat-DevOps/Bioinformatics`
 * A copy of information about HPC at the University of Melbourne is available at `https://dashboard.hpc.unimelb.edu.au`. See also `man spartan` on the cluster and the `/usr/local/common/` directories for more help and code exammples.
 * Help is available at: `hpc-support@unimelb.edu.au`. Other courses also conducted by Research Platforms.
-* Terminal projection via https://shellshare.net/r/Spartan
+* Terminal projection via `https://shellshare.net/r/Spartan`
 -- *Slide End* --
 
 -- *Slide* --
@@ -24,6 +24,7 @@
 
 -- *Slide* --
 ### Part 1: Supercomputers and HPC
+* Many bioinformatics tasks require significant computing power and can only be run on HPC systems.
 * "Supercomputer" means any single computer system that has exceptional processing power for its time. 
 * One popular metric (LINPACK) is the number of floating­ point operations per second (FLOPS) such a system can carry out (http://top500.org). HPC Challenge and HPCG are broader, more interesting metrics. 
 * High Performance Computer (HPC) is any computer system whose architecture allows for above average performance. High Throughput Computing (HTC) is an architecture for maximum job completion; capability vs capacity computing.
@@ -38,7 +39,7 @@
 -- *Slide* --
 ### Part 1: Parallel Computing
 * With a cluster architecture, applications can be more easily parallelised across them. *Data parallel*, running same task in parallel; the horse and cart example, Monte Carlo experiments. *Task parallel*, running independent tasks in parallel with communication; driving a car, molecullar modelling.
-* Further examples of serial versus parallel; weather forecasting, aerodynamic design, fluid mechanics, radiation modelling, molecullar dynamics, CGI rendering for popular movies, etc. Reality is a parallel system!
+* Further examples of serial versus parallel; weather forecasting, aerodynamic design, fluid mechanics, radiation modelling, molecular dynamics, CGI rendering for popular movies, etc. Reality is a parallel system!
 -- *Slide End* --
 
 -- *Slide* --
@@ -130,6 +131,13 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 -- *Slide End* --
 
 -- *Slide* --
+### Part 2: This is a GNU/Linux World CLI III
+* Many bioinformatics tools can _only_ be used through the command-line, or have extra capabilities with a CLI.
+* Many bioinformatics tasks are repetitive and error-prone. Tested tasks can be automated through scripting.
+* The shell environment is more reproducible, with a record of activities and precise environment descriptions.
+-- *Slide End* --
+
+-- *Slide* --
 ### Part 2: File System Hierarchy
 * When a user logs in on a Linux or other UNIX-like system on the command line, they start in their home directory (`/home/<<username>>`). Explore file system hierarchy. Project directory in `/data/projects/<<projectID>>`.
 * "Everything in the UNIX system is a file" (Kernighan & Pike, 1984, 41). 
@@ -140,9 +148,10 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 ### Part 2: Exploring The Environment
 | Command     | Explanation                                                                |
 |:------------|:--------------------------------------------------------------------------:|
-|`whoami`   | "Who Am I?; prints the effective user id                                  |
-|`pwd`      | "Print working directory"|
-|`ls`       | "List" directory listing                                                   |	
+|`whoami`   | "Who Am I?; prints the effective user id                                     |
+|`pwd`      | "Print working directory"							   |
+|`ls`       | "List" directory listing                                                     |
+|`clear`   | "Clear" the screen.							   |	
 -- *Slide End* --
 
 -- *Slide* --
@@ -154,11 +163,12 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 |-------------|:--------------------------------------------------------------------------:|
 |`ls -lart`   | Directory listing with options (long, all, reverse time)                   |
 |`ls -lash`   | Directory listing with options (long, all, size in human readable	   |
+|`ls -lF`     | Directory listing with options (long, append indicator			   |
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 2: The Online Manual
-Linux commands come with "man" (manual) pages, which provide a terse description of the meaning and options available to a command. A verbose alternative to man is info. 
+Linux commands come with "man" (manual) pages, which provide a terse description of the meaning and options available to a command. A verbose alternative to man is info. The man command has navigateion shortcuts, `q` for quit, ` /` for search, etc, plus page up and down or cursor keys.
 
 | Command             | Explanation                                                      |
 |:--------------------|:-----------------------------------------------------------------|
@@ -169,22 +179,24 @@ Linux commands come with "man" (manual) pages, which provide a terse description
 
 -- *Slide* --
 ### Part 2: Pipes
-Linux also have very useful 'pipes' and redirect commands. To pipe one command through another use the '|' symbol.
+Linux also have very useful 'pipes' and redirect commands. To pipe one command through another use the '|' symbol. The `less` command displays information one screen at a time. The `less` command uses the same navigation commands as `man`
 
 | Command            | Explanation                                                         |
 |:-------------------|:-------------------------------------------------------------------:|
-| <code>who -u  &#124; less</code> | "Who" shows who is logged on and how long they've been idle.        |
+| <code>who -u  &#124; less</code> | `who` shows who is logged on and how long they've been idle.        |
+| <code>who -u  &#124; wc -l</code> | `wc` is "word count", `wc -l` is number of lines. |
 | <code>ps afux &#124; less</code> | "ps" provides a list of current processes. Check `man ps`           |
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: Redirects
-To redirect output use the '>' symbol. To redirect input (for example, to feed data to a command) use the '<'. Concatenation is achieved through the use of '>>' symbol. 
+### Part 2: Redirects and File Display
+To redirect output use the '>' symbol. To redirect input (for example, to feed data to a command) use the '<'. Concatenation is achieved through the use of '>>' symbol.
 
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
-| `w > list.txt`  | 'w' is a combination of who, uptime and ps -a, redirected            |
-| `w >> list.txt` | Same command, concatenated                                           |
+|`w > list.txt`  | 'w' is a combination of who, uptime and ps -a, redirected            |
+|`w >> list.txt` | Same command, concatenated                                           |
+|`less list.txt` | Display file on screen. See also `more` and `cat`	|
 -- *Slide End* --
 
 -- *Slide* --
@@ -212,8 +224,7 @@ To get a copy of the files from an external source to your home directory, you w
 
 -- *Slide* --
 ### Part 2: Copying Files Within a Local Systems 
-To copy a file from within a system use the `cp` command. Common options include `-r` to copy an entire directory
-
+To copy a file from within a system use the `cp` command. Common options include `-r` to copy an entire directory.
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
 | `cp source destination`      | Copy a file from source to destination                    |
@@ -222,12 +233,22 @@ To copy a file from within a system use the `cp` command. Common options include
 -- *Slide End* --
 
 -- *Slide* --
+### Part 2: Copying Files Within a Local Systems 
+Examples; use the tab key to help with filename completion and the `.` for current working directory (cwd).
+| Command           | Explanation                                                          |
+|:------------------|:--------------------------------------------------------------------:|
+|`cp /usr/local/common/IntroLinux/gattaca.txt .`     | Copy a file from source to destination.   |
+|`cp -r /usr/local/common/IntroLinux .`		| Copy the directory from source to destination. |
+|`cp -r /usr/local/common/Genomics .`		| Copy the directory from source to destination. |
+-- *Slide End* --
+
+-- *Slide* --
 ### Part 2: Copying Files Between Systems
 To copy files to between systems desktop use SCP (secure copy protocol) or SFTP (secure file transfer protocol), combining the ssh and cp functionality. The `cp` options can also be used. The source or destination address should also require a remote shell login.
 
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
-| `scp source.address:/path/ destination.address:/path/`| Copies files on a network        |
+|`scp source.address:/path/ destination.address:/path/`| Copies files from an external network  |
 -- *Slide End* --
 
 -- *Slide* --
@@ -266,10 +287,17 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 -- *Slide End* --
 
 -- *Slide* --
+### Part 2: Navigation
+* The working directory can be changed with the `cd` ("change directory") command with a path (e.g., `cd Genomics/`)
+* The tilde (`~`) is a shortcut to the user's home directory, the `.` the current working directory, the `..` a directory level closer to the root directory.
+-- *Slide End* --
+
+-- *Slide* --
 ### Part 2: Creating Directories, Moving Files
 * Directories can be created with the `mkdir` command (e.g., `mkdir braf`).
 * Files can be copied with the `cp` command (e.g., `cp gattaca.txt gattaca2.txt`)
-* Files can be moved with the `mv` command (e.g., `mv gattaca2.txt braf`)
+* Files can be moved with the `mv` command (e.g., `mv gattaca2.txt braf/`)
+-- *Slide End* --
 
 -- *Slide* --
 ### Part 2: File Differences
@@ -283,8 +311,14 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 ### Part 2: Searches and Wildcards
 * To search for files use the find command (e.g., `find . -name '*.txt'`). Compare with `locate` and `whereis`.
 * To search within files, use the `grep` command (e.g., `grep -i ATEK braf/*` or `grep -l`)
-* The most common wildcard is `*`, but there is also `?` (single character). Expansion is 'globbing'.
+* The most common wildcard is `*`, but there is also `?` (single character). Expansion is called 'globbing'.
 * There are also range searches (e.g., `[a-z]` any character between a and z, inclusive)
+-- *Slide End* --
+
+-- *Slide* --
+### Part 2: Searches and Wildcards cont...
+* The `grep` command can also print lines before and after the expression: (e.g., `grep -B1 -A2 NNNNNNNNNN SRR098026.fastq`)
+* Use `grep` with other commands to extract information: e.g., `grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt`
 -- *Slide End* --
 
 -- *Slide* --

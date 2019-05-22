@@ -1,6 +1,8 @@
 # SpartanBioinformatics
 A two day, eight-hour training course that provides an introduction to the Spartan HPC/Cloud hybrid and an introduction to the Linux command line with a Bioinformatics focus.
 
+The course is partially built from the Spartan Introductory course, the Spartan Advanced course, and the Data Carpentry courses for Genomics.
+
 ## Git
 
 If you check this repository out be aware that it uses Git submodules to manage the reveal.js dependency. To also checkout reveal.js, you will have to either:
