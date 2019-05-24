@@ -157,11 +157,6 @@
 -- *Slide End* --
 
 -- *Slide* --
-### Part 1: Sidebar: The fastq Format
-* FASTQ format is a ASCII-text format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality score.
-* Line 1 always begins with '@' and then information about the read; line 2 is the actual DNA sequence; line 3 always begins with a '+' and sometimes the same info in line 1, line 4 represents the quality scores and will have same number of characters as line 2.
-
--- *Slide* --
 ### Part 1: File Manipulation Commands cont...
 * Rename will rename the specified files by replacing the first occurrence of expression in their name by replacement. e.g., `rename .txt .bak *.txt`
 * Split can be used to split large files into smaller components. The general syntax is `split [OPTION]... [INPUT [PREFIX]]`. Common options include byte (-b #) or linecount (-l #, default of 1000) for the new files. The input is the filename and the prefix is the output, PREFIXaa, PREFIXab etc.
