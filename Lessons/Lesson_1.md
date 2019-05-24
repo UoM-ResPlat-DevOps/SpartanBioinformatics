@@ -4,7 +4,8 @@
 * Part 2: Logging on an exploring the Linux Environment.
 * Part 3: Learning about Environment Modules and the Slurm job submission system.
 * Part 4: Submitting test jobs.
-* Part 5: Slurm Command Summaries and Peformance Test
+* Part 5: A Genomics Workflow
+* Part 6: Slurm Command Summaries and Peformance Test
 -- *Slide End* --
 
 -- *Slide* --
@@ -442,7 +443,7 @@ module load my­app­compiler/version
 my­app data
 ```
 
-* Examples at `/usr/local/common/MATLAB` and `/usr/local/common/R` ; note that the job can call other scripts. Note that Slurm has full and abbreviated directives.
+* Examples at `/usr/local/common/MATLAB`, `/usr/local/common/R` and `/usr/local/common/Genomics/fastqc.slurm` ; note that the job can call other scripts. Note that Slurm has full and abbreviated directives.
 -- *Slide End* --
 
 -- *Slide* --
@@ -450,7 +451,7 @@ my­app data
 * In Slurm, `ntasks` means number of tasks, whereas `cpus-per-task` allocates processor cores. In most jobs (serial, MPI) this is 1 by default.
 * With shared-memory multithreaded jobs on (e.g., OpenMP), modify the `--cpus-per-task` to a maximum of the cores in the node.<br />
 `#SBATCH ­­--cpus-­per-­task=8`
-* See examples at `/usr/local/common/FSL/`
+* See example at `/usr/local/common/BLAST/`
 -- *Slide End* --
 
 -- *Slide* --
@@ -543,7 +544,40 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide End* --
 
 -- *Slide* --
-### Part 5: Slurm User Commands
+### Part 4: Performance Test
+* Compare the performance of NAMD/VMD Ubiquitin protein test case under `/usr/local/common/NAMD` under different configurations
+
+| Nodes and Tasks       | Partition             | Time                    | 
+|-----------------------|-----------------------|------------------------:|
+|ntasks=4               | cloud                 |                         |
+|ntaks=8                | cloud                 |                         |
+|nodes=2, ntasks=16     | cloud                 |                         |
+|nodes=2, ntasks=16     | physical              |                         |
+-- *Slide End* --
+
+-- *Slide* --
+### Part 5: File Formats
+* A common data format is the "tarball", usually as a *.tgz or *.tar.gz file. This combines many other files.
+* The "table of contents" of a tarball can be checked with `tar tf $filename`
+* If suitable, the tarball can be extracted with `tar xvf $filename`.
+* Another format is *.gz, the GNU implementation of the zip algorithm
+-- *Slide End* --
+
+-- *Slide* --
+### Part 5: Assessing The Read
+* FASTQ format is a format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores.
+* FastQC is an application which does quality control checks on raw sequence data. Can be incorporated into a job, and with html and text output.
+-- *Slide End* --
+
+-- *Slide* --
+### Part 5: Cleaning The Read
+* Trimmomatic can be used to filter poor quality reads and trim poor quality bases from samples.
+* Trimmomatic has multi-threaded options as well, which is used in the example job submission script.
+* A loop can be used to iterate over fastq files
+-- *Slide End* --
+
+-- *Slide* --
+### Part 6: Slurm User Commands
 
 | User Commad    | Slurm Command           | 
 |----------------|------------------------:|
@@ -557,7 +591,7 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide End* --
 
 -- *Slide* --
-### Part 5: Slurm Job Commands I
+### Part 6: Slurm Job Commands I
 | Job Specification     | Slurm Command              | 
 |-----------------------|---------------------------:|
 |Script directive       |`#SBATCH`                   |
@@ -569,7 +603,7 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide End* --
 
 -- *Slide* --
-### Part 5: Slurm Job Commands II
+### Part 6: Slurm Job Commands II
 | Job Specification     | Slurm Command              | 
 |-----------------------|---------------------------:|
 |Event Address          |`--mail-user=[address]`     |
@@ -579,7 +613,7 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide End* --
 
 -- *Slide* --
-### Part 5: Slurm Environment Commands
+### Part 6: Slurm Environment Commands
 | Environment Command   | Slurm (Command)         | 
 |-----------------------|------------------------:|
 |Job ID                 |`$SLURM_JOBID`           |
@@ -587,18 +621,6 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 |Submit Host            |`$SLURM_SUBMIT_HOST`     |
 |Node List              |`$SLURM_JOB_NODELIST`    |
 |Job Array Index        |`$SLURM_ARRAY_TASK_ID`   |
--- *Slide End* --
-
--- *Slide* --
-### Part 5: Performance Test
-* Compare the performance of NAMD/VMD Ubiquitin protein test case under `/usr/local/common/NAMD` under different configurations
-
-| Nodes and Tasks       | Partition             | Time                    | 
-|-----------------------|-----------------------|------------------------:|
-|ntasks=4               | cloud                 |                         |
-|ntaks=8                | cloud                 |                         |
-|nodes=2, ntasks=16     | cloud                 |                         |
-|nodes=2, ntasks=16     | physical              |                         |
 -- *Slide End* --
 
 -- *Slide* --
