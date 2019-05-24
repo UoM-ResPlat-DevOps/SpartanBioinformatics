@@ -1,5 +1,5 @@
 # SpartanBioinformatics
-A two day, eight-hour training course that provides an introduction to the Spartan HPC/Cloud hybrid and an introduction to the Linux command line with a Bioinformatics focus.
+A two day, eight-hour training course that provides an introduction to the Spartan HPC/Cloud hybrid and an introduction to the Linux command line with a life-sciences focus for Melbourne Bioinformatics.
 
 The course is partially built from the Spartan Introductory course, the Spartan Advanced course, and the Data Carpentry courses for Genomics.
 

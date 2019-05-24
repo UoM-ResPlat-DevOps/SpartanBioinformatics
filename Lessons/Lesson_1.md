@@ -237,9 +237,9 @@ To copy a file from within a system use the `cp` command. Common options include
 Examples; use the tab key to help with filename completion and the `.` for current working directory (cwd).
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
-|`cp /usr/local/common/IntroLinux/gattaca.txt .`     | Copy a file from source to destination.   |
-|`cp -r /usr/local/common/IntroLinux .`		| Copy the directory from source to destination. |
+|`cp /usr/local/common/Genomics/gattaca.txt .`     | Copy a file from source to destination.   |
 |`cp -r /usr/local/common/Genomics .`		| Copy the directory from source to destination. |
+|`cp -r /usr/local/common/HPCshells .` | Copy the directory from source to destination. |
 -- *Slide End* --
 
 -- *Slide* --
@@ -442,7 +442,7 @@ module load my­app­compiler/version
 my­app data
 ```
 
-* Examples at `/usr/local/common/MATLAB` and `/usr/local/common/R`, `/usr/local/OpenFOAM`; note that the job can call other scripts. Note that Slurm has full and abbreviated directives.
+* Examples at `/usr/local/common/MATLAB` and `/usr/local/common/R` ; note that the job can call other scripts. Note that Slurm has full and abbreviated directives.
 -- *Slide End* --
 
 -- *Slide* --
