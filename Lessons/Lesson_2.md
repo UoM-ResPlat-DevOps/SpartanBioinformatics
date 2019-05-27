@@ -1,10 +1,9 @@
 -- *Slide* --
 ### Part 0: Goals for today
 * Part 1: Advanced Linux Commands.
-* Part 2: Regular Expressions.
-* Part 3: Shells In General, Bash in Particular.
-* Part 4: Variables, Loops, Conditionals, and Functions.
-* Part 5: Shell Scripts with Slurm.
+* Part 2: Regular Expressions
+* Part 3: Shells Scripting
+* Part 4: Shell Scripts with Slurm
 -- *Slide End* --
 
 -- *Slide* --
@@ -499,6 +498,12 @@ http://sed.sourceforge.net/sed1line.txt
 `eval 'for i in {1..100}; do sleep 2; echo "Sedimentary" >> rocks.txt ; done'`    
 `eval 'for i in {1..100}; do sleep 2; echo "Metamorphic" >> rocks.txt ; done' &`    
 * It is important not to run large scripts on the login node. Set up a job on a compute node with `sinteractive`.
+-- *Slide End* --
+
+-- *Slide* --
+### Part 4: Genomics Scripts
+* Following the previous introductory examples, workflows can be added in to a scripted manner.
+* Follow the REAME in the `Genomics/` directory, and the `align.slurm` and `variant.slurm` examples.
 -- *Slide End* --
 
 -- *Slide* --
