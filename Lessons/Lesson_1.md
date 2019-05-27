@@ -12,8 +12,12 @@
 ### Slide Respository
 * A copy of these slides and sample code is available at: `https://github.com/UoM-ResPlat-DevOps/Bioinformatics`
 * A copy of information about HPC at the University of Melbourne is available at `https://dashboard.hpc.unimelb.edu.au`. See also `man spartan` on the cluster and the `/usr/local/common/` directories for more help and code exammples.
+-- *Slide End* --
+
+-- *Slide* --
+### Slide Respository
 * Help is available at: `hpc-support@unimelb.edu.au`. Other courses also conducted by Research Platforms.
-* Terminal projection via `https://shellshare.net/r/Spartan`
+* Terminal projection for today at via `https://shellshare.net/r/Spartan`
 -- *Slide End* --
 
 -- *Slide* --
@@ -27,14 +31,19 @@
 ### Part 1: Supercomputers and HPC
 * Many bioinformatics tasks require significant computing power and can only be run on HPC systems.
 * "Supercomputer" means any single computer system that has exceptional processing power for its time. 
-* One popular metric (LINPACK) is the number of floating­ point operations per second (FLOPS) such a system can carry out (http://top500.org). HPC Challenge and HPCG are broader, more interesting metrics. 
+* One popular metric (LINPACK) is the number of floating­ point operations per second (FLOPS) such a system can carry out (http://top500.org). 
+-- *Slide End* --
+
+-- *Slide* --
+### Part 1: Supercomputers and HPC cont.
+* HPC Challenge and HPCG are broader, more interesting metrics. 
 * High Performance Computer (HPC) is any computer system whose architecture allows for above average performance. High Throughput Computing (HTC) is an architecture for maximum job completion; capability vs capacity computing.
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 1: Clusters and Research Computing
 * Clustered computing is when two or more computers serve a single resource. This improves performance and provides redundancy in case of failure system. Typically commodity systems with a high-speed local network.
-* Research computing is the software applications used by the scientific community to aid research. Does not necessarily equate with high performance computing, or the use of clusters.­ It is whatever researchers use and do. Not issues of producibility and environments.
+* Research computing is the software applications used by the scientific community to aid research. Does not necessarily equate with HPC; it is whatever researchers use and do. Note issues of reproducibility.
 -- *Slide End* --
 
 -- *Slide* --
@@ -44,7 +53,7 @@
 -- *Slide End* --
 
 -- *Slide* --
-<img src="<img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/smartparallel.jpg" />
+<img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/smartparallel.jpg" />
 -- *Slide End* --
 
 -- *Slide* --
@@ -58,7 +67,6 @@
 -- *Slide* --
 ### Part 1: Generic HPC Cluster Design
 <img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/genericcluster.png" />
-Image originally from the VPAC
 -- *Slide End* --
 
 -- *Slide* --
@@ -91,6 +99,10 @@ Image originally from the VPAC
 ### Part I: Accounts and Projects
 * Spartan uses its an authentication that is tied to the university Security Assertion Markup Language (SAML). The login URL is `https://dashboard.hpc.unimelb.edu.au/karaage`
 * Users on Spartan must belong to a project. Projects must be led by a University of Melbourne researcher (the "Principal Investigator") and are subject to approval by the Head of Research Compute Services. Participants in a project can be researchers or research support staff from anywhere.
+-- *Slide End* --
+
+-- *Slide* --
+### Part I: Accounts and Projects
 * Select Department from this list: `https://gitlab.unimelb.edu.au/resplat-cloud/uom-cloud-dashboard/blob/uom/queens/nectar_dashboard/rcallocation/choices_dept.py`
 * Projects have their own project directory for files (500GB default, can be increased to 1TB or 10TB with approval).
 -- *Slide End* --
@@ -104,16 +116,20 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 -- *Slide End* --
 
 -- *Slide* --
-### Part I: SSH Keys, Config, Data Transfers
+### Part I: SSH Keys and Config
 * Consider using an `.ssh/config` file and using passwordless SSH by creating a keypair and adding to your `.ssh/authorized_keys` file on Spartan.
 * SSH Keys will make your life easier. Follow the instructions here: `https://dashboard.hpc.unimelb.edu.au/faq/#how-do-setup-passwordless-ssh-login`
-* Both useful for data transfers. c.f., `https://dashboard.hpc.unimelb.edu.au/managing_data/` 
+ -- *Slide End* --
+
+-- *Slide* --
+### Part I: Data Transfers
+* Both SSH keys and SSH config are very useful for data transfers!\
+* `https://dashboard.hpc.unimelb.edu.au/managing_data/` 
 -- *Slide End* --
 
 -- *Slide* --
 ### Part I: Latency, Bandwidth, Data Location
-* Latency is the speed of data transfer, bandwidth is the "width" of the "band" of data transfer.
-* Using a road analogy, "latency" is the smoothness of the surface, "bandwith" is the number of lanes.
+* Latency is the speed of data transfer, bandwidth is the "width" of the "band" of data transfer. Using a road analogy, "latency" is the smoothness of the surface, "bandwith" is the number of lanes.
 * Distance is a *very* important factor. Data for processing should be kept as close as possible to the processor.
 * As Grace Hopper used to say: "Mind your nanoseconds!" https://www.youtube.com/watch?v=JEpsKnWZrJ8
 -- *Slide End* --
@@ -124,7 +140,7 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: This is a GNU/Linux World CLI II
+### Part 2: This is a GNU/Linux World
 * The command­line interface provides a great deal more power and is very resource efficient. 
 * GNU/Linux scales and does so with stability and efficiency.
 * Critical software such as the Message Parsing Interface (MPI) and nearly all scientific programs are designed to work with GNU/Linux. 
@@ -132,7 +148,7 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: This is a GNU/Linux World CLI III
+### Part 2: This is a GNU/Linux World
 * Many bioinformatics tools can _only_ be used through the command-line, or have extra capabilities with a CLI.
 * Many bioinformatics tasks are repetitive and error-prone. Tested tasks can be automated through scripting.
 * The shell environment is more reproducible, with a record of activities and precise environment descriptions.
@@ -157,31 +173,36 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 
 -- *Slide* --
 ### Part 2: Command Options
-* Linux commands often come with options expressed as: `<command> --<option[s]>`
-* Options can be expressed as full words or abbreviated characters.
+* Linux commands often come with options expressed as: `<command> --<option[s]>`. Options can be expressed as full words or abbreviated characters.
 
 | Command     | Explanation                                                                |
 |-------------|:--------------------------------------------------------------------------:|
-|`ls -lart`   | Directory listing with options (long, all, reverse time)                   |
-|`ls -lash`   | Directory listing with options (long, all, size in human readable	   |
-|`ls -lF`     | Directory listing with options (long, append indicator			   |
+|`ls -lart`   | Options long, all, reverse time                   |
+|`ls -lash`   | Options long, all, size in human format	   |
+|`ls -lF`     | Options long, append indicator			   |
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 2: The Online Manual
-Linux commands come with "man" (manual) pages, which provide a terse description of the meaning and options available to a command. A verbose alternative to man is info. The man command has navigateion shortcuts, `q` for quit, ` /` for search, etc, plus page up and down or cursor keys.
+* Linux commands come with "man" (manual) pages, which provide a terse description of the meaning and options available to a command. A verbose alternative to man is info. The man command has navigateion shortcuts, `q` for quit, ` /` for search, etc, plus page up and down or cursor keys.
+-- *Slide End* --
 
+-- *Slide* --
+### Part 2: The Online Manual
 | Command             | Explanation                                                      |
 |:--------------------|:-----------------------------------------------------------------|
 |`man <command`       | Display the manual entry for the command                         |
 |`info <command>`     | A verbose description of the command                             |
-| `whatis <command>`  | A terse description of the command                               |
+|`whatis <command>`  | A terse description of the command                               |
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 2: Pipes
-Linux also have very useful 'pipes' and redirect commands. To pipe one command through another use the '|' symbol. The `less` command displays information one screen at a time. The `less` command uses the same navigation commands as `man`
+* Linux also have very useful 'pipes' and redirect commands. To pipe one command through another use the '|' symbol. The `less` command displays information one screen at a time. The `less` command uses the same navigation commands as `man`
+-- *Slide End* --
 
+-- *Slide* --
+### Part 2: Pipes
 | Command            | Explanation                                                         |
 |:-------------------|:-------------------------------------------------------------------:|
 | <code>who -u  &#124; less</code> | `who` shows who is logged on and how long they've been idle.        |
@@ -191,8 +212,11 @@ Linux also have very useful 'pipes' and redirect commands. To pipe one command t
 
 -- *Slide* --
 ### Part 2: Redirects and File Display
-To redirect output use the '>' symbol. To redirect input (for example, to feed data to a command) use the '<'. Concatenation is achieved through the use of '>>' symbol.
+* To redirect output use the '>' symbol. To redirect input (for example, to feed data to a command) use the '<' (compare `wc file` with `wc < file`). Concatenation is achieved through the use of '>>' symbol.
+-- *Slide End* --
 
+-- *Slide* --
+### Part 2: Redirects and File Display
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
 |`w > list.txt`  | 'w' is a combination of who, uptime and ps -a, redirected            |
@@ -201,21 +225,26 @@ To redirect output use the '>' symbol. To redirect input (for example, to feed d
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: Files and Text Editing I
+### Part 2: Files and Text Editing
 * Linux filenames can be constructed of any characters except the forward slash, which is for directory navigation. However it is best to avoid punctuation marks, non-printing characters (e.g., spaces). It is *much* better to use underscores or CamelCase instead of spaces, newlines etc (including in job names).
 * Linux is case-sensitive with its filenames (e.g., list.txt, LIST.txt lisT.txT are different).
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: Files and Text Editing II
+### Part 2: Files and Text Editing
 * Files do not usually require a program association suffix, although you may find this convenient (a C compiler like files to have .c in their suffix, for example). 
 * The type of file can be determined with the `file` command. The type returned will usually be text, executable binaries, archives, or a catch-all "data" file.
-* There are three text editors usually available on Linux systems on the command-line. These are `nano` (1989, as `pico`) and `vim` (or `vi`), and or `emacs` (both 1976). See `https://www.vimgolf.com/`
+-- *Slide End* --
+
+-- *Slide* --
+### Part 2: Files and Text Editing
+* There are three text editors usually available on Linux systems on the command-line. These are `nano` (1989, as `pico`) and `vim` (or `vi`), and or `emacs` (both 1976). 
+* Nano is easy to use, but has few features. Vim is powerful but is terse. Emacs is feature-rich. See `https://www.vimgolf.com/`
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 2: Copying Files to a Local Systems
-To get a copy of the files from an external source to your home directory, you will probably want to use `wget`, or `git`, or `scp`.
+To get a copy of the files from an external source to your home directory, you will probably want to use `wget`, `cURL`, or `git`, or `scp`.
 
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
@@ -225,7 +254,8 @@ To get a copy of the files from an external source to your home directory, you w
 
 -- *Slide* --
 ### Part 2: Copying Files Within a Local Systems 
-To copy a file from within a system use the `cp` command. Common options include `-r` to copy an entire directory.
+To copy a file from within a system use the `cp` command.
+
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
 | `cp source destination`      | Copy a file from source to destination                    |
@@ -235,7 +265,8 @@ To copy a file from within a system use the `cp` command. Common options include
 
 -- *Slide* --
 ### Part 2: Copying Files Within a Local Systems 
-Examples; use the tab key to help with filename completion and the `.` for current working directory (cwd).
+Use the tab key to help with filename completion and the `.` for current working directory (cwd).
+
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
 |`cp /usr/local/common/Genomics/gattaca.txt .`     | Copy a file from source to destination.   |
@@ -253,14 +284,14 @@ To copy files to between systems desktop use SCP (secure copy protocol) or SFTP 
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: Synchronising Files and Directories I
+### Part 2: Synchronising Files and Directories
 * The `rsync` utility provides a fast way to keep two collections of files "in sync" by tracking changes.    
 * The source or destination address should also require a remote shell login.    
 For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles .`
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: Synchronising Files and Directories II
+### Part 2: Synchronising Files and Directories
 
 | Command           | Explanation                                                          |
 |:------------------|:--------------------------------------------------------------------:|
@@ -269,16 +300,14 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 -- *Slide End* --
 
 -- *Slide* --
-
-### Part 2: Synchronising Files and Directories III
+### Part 2: Synchronising Files and Directories
 * The `rsync -avz` command ensures that it is in archive mode (recursive, copies symlinks, preserves permissions), is verbose, and compresses on transmission. 
 * The --update restricts the copy only to files that are newer than the destination. 
 * Note that rsync is "trailing slash sensitive". A trailing / on a source means "copy the contents of this directory". Without a trailing slash it means "copy the directory".
 -- *Slide End* --
 
 -- *Slide* --
-
-### Part 2: Synchronising Files and Directories IV
+### Part 2: Synchronising Files and Directories
 * Rsync can be used in a synchronise mode with the --delete flag.  Consider this with the `-n`, or `--dry-run` options first!
 
 | Command           | Explanation                                                          |
@@ -332,7 +361,6 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 -- *Slide End* --
 
 -- *Slide* --
-### Part 2: Why The File Differences Mattered
 <blockquote>
 BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This protein is involved in sending signals inside cells, which are involved in directing cell growth. In 2002, it was shown to be faulty (mutated) in human cancers. In particular the difference that between the two files "ATVKSRWSGS" and "ATEKSRWSGS" is the difference which leads to susceptibility to metastatic melanoma. 
 </blockquote>
@@ -340,9 +368,8 @@ BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This prot
 
 -- *Slide* --
 ### Part 3: A Dynamic Environment
-* Environment modules provide for the dynamic modification of the user's environment via module files, such as the location of the application's executables, its manual path, the library path, and so forth.
+* Environment modules provide for the dynamic modification of the user's environment via module files, such as the location of the application's executables, its manual path, etc. Check with the `env` (environment) command.
 * Modulefiles also have the advantages of being shared on many users on a system (such as an HPC system) and easily allowing multiple installations of the same application but with different versions and compilation options.
-* Check the current environment with the `env` (environment) command.
 -- *Slide End* --
 
 -- *Slide* --
@@ -377,8 +404,8 @@ BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This prot
 
 -- *Slide* --
 ### Part 3: Portable Batch System I
-* The Portable Batch System (or simply PBS) performs job scheduling by assigning unattended background tasks expressed as batch jobs, among the available resources.
-* Originally developed by MRJ Technology Solutions under contract to NASA in the early 1990s. Released as an open-source product as OpenPBS. Forked by Adaptive Computing as TORQUE (Terascale Open-source Resource and QUEue Manager). Many of the original engineering team now part of Altair Engineering who have their own commercial version, PBSPro.
+* The Portable Batch System (or simply PBS) performs job scheduling by assigning unattended background tasks expressed as batch jobs, among the available resources. Originally developed by MRJ Technology Solutions under contract to NASA in the early 1990s. 
+* Released as an open-source product as OpenPBS. Forked by Adaptive Computing as TORQUE. There is also Altair Engineeringss PBSPro.
 -- *Slide End* --
 
 -- *Slide* --
@@ -389,13 +416,13 @@ BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This prot
 
 -- *Slide* --
 ### Part 3: Slurm Workload Manager
-* Slurm, used on Spartan, began development as a collaborative effort primarily by Lawrence Livermore National Laboratory, SchedMD, Linux NetworX, Hewlett-Packard, and Groupe Bull as a Free Software resource manager. As of November 2015, TOP500 list of most powerful computers in the world indicates that Slurm is the workload manager on six of the top ten systems. Slurm's design is very modular with about 100 optional plugins.
+* Slurm, used on Spartan, began development as a collaborative effort primarily by Lawrence Livermore National Laboratory et al as a free software workload manager. As of November 2015, TOP500 list of most powerful computers in the world indicates that Slurm is the workload manager on six of the top ten systems. Slurm's design is very modular with about 100 optional plugins.
 * There is a repository for converting PBS to Slurm: https://github.com/bjpop/pbs2Slurm
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 3: Job Submission Principles
-* The steps for job submission are (a) setup and launch., (b) monitor., and (c) retrieve results and analyse. Jobs are launched from the login node with resource requests and, when the job scheduler decides, run on compute nodes. Some directories (e.g.,. user home or project directories) are shared across the entire cluster so output is an accessible place.
+* The steps for job submission are (a) setup and launch., (b) monitor., and (c) retrieve results and analyse. Jobs are launched from the login node with resource requests and, when the job scheduler decides, run on compute nodes. Some directories (e.g., /scratch) are shared across the entire cluster so output is an accessible place.
 * Job scripts are simply resource requests (understood by scheduler), a batch of commands (understood by shell) with output to files.
 -- *Slide End* --
 
@@ -412,24 +439,21 @@ BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This prot
 
 -- *Slide* --
 <img src="http://levlafayette.com/files/rabbitjobs.png" width="100%" height="100%" title="Job submission using rabbits" />
-From the IBM 'Red Book' on Job Submission.
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 2: Partitions and Queues
-* Setup and launch consists of writing a short script that initially makes resource requests 
-(walltime, processors, memory, queues) and then commands (loading modules, changing 
-directories, running executables against datasets etc), and optionally checking queueing system.
+* Setup and launch consists of writing a short script that initially makes resource requests and then commands.
 * Core command for checking paritions is `sinfo -s`, or `sinfo -p $partition` for partition and node status. Major partitions are: `cloud`, `physical`, `gpgpu`. Note also `longcloud`, and `shortgpgpu`.
 * Core command for checking queue `squeue` or `showq` (on Spartan).
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 2: Job Status
-* Core command for job submission `sbatch [jobscript]` 
-* Core command for checking job `squeue -j [jobid]`, detailed command `scontrol show job [jobid]` (SLURM), or all user's jobs `squeue -u [username]`.
-* Core command for deleting job `scancel [jobid]`
-* Basic resource usage `sacct -j [jobid] --format=JobID,JobName,MaxRSS,Elapsed` (or `-u [username]`
+* Job submission: `sbatch [jobscript]` 
+* Checking job: `squeue -j [jobid]`, detailed command `scontrol show job [jobid]` (SLURM), or all user's jobs `squeue -u [username]`.
+* Deleting job: `scancel [jobid]`
+* Resource usage: `sacct -j [jobid] --format=JobID,JobName,MaxRSS,Elapsed` (or `-u [username]`)
 -- *Slide End* --
 
 -- *Slide* --
@@ -455,7 +479,7 @@ my­app data
 -- *Slide End* --
 
 -- *Slide* --
-### Part 3 : Multinode Jobs I
+### Part 3 : Multinode Jobs
 * For distributed-memory multicore job using message passing, the multinode partition has to be 
 invoked and the resource requests altered e.g.,
 `#!/bin/bash`<br />
@@ -467,7 +491,7 @@ invoked and the resource requests altered e.g.,
 -- *Slide End* --
 
 -- *Slide* --
-### Part 3 : Multinode Jobs II
+### Part 3 : Multinode Jobs
 * Multinodes jobs should be run on the `physical` partition which has the higher interconnect speed.
 * Multinode jobs on Spartan may be slower if they have a lot of interprocess communication and they cross compute nodes.
 * This said, multinodes jobs can also request total tasks/cores rather than allocating them per node. e.g., `#SBATCH ­­--ntasks=16`<br />
@@ -475,14 +499,13 @@ invoked and the resource requests altered e.g.,
 -- *Slide End* --
 
 -- *Slide* --
-### Part 3 : Job Script Generator
 <img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/cat-asleep-on-keyboard.jpg" width="100%" height="100%" title="Lazy cat" />
 ` https://dashboard.hpc.unimelb.edu.au/guides/script_generator/ `
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 4 : Job/Batch Arrays
-* With a job or batch array the same batch script, and therefore the same resource requests, is used multiple  times. A typical example is to apply the same task across multiple datasets. The following example submits 10 batch jobs with myapp running against datasets dataset1.csv, dataset2.csv, ... 
+* With a job or batch array the same batch script, and therefore the same resource requests, is used multiple  times. The following example submits 10 batch jobs with myapp running against datasets dataset1.csv, dataset2.csv, ... 
 dataset10.csv
 `#SBATCH ­­array=1­-10`<br />
 `myapp ${Slurm_ARRAY_TASK_ID}.csv`
@@ -491,7 +514,7 @@ dataset10.csv
 
 -- *Slide* --
 ### Part 4 : Job/Batch Dependencies
-* A dependency condition is established on which the launching of a batch script depends, creating a conditional pipeline. The dependency directives consist of `after`, `afterok`, `afternotok`, `before`, `beforeok`, `beforenotok`. A typical use case is where the output of one job is required as the input of the next job. Multiple job dependencies are specified with colon separated values.
+* A dependency condition is established on which the launching of a batch script depends, creating a conditional pipeline. The dependency directives consist of `after`, `afterok`, `afternotok`, `before`, `beforeok`, `beforenotok`. Multiple job dependencies are specified with colon separated values.
 `#SBATCH ­­dependency=afterok:myfirstjobid mysecondjob`
 * Examples at `/usr/local/common/depend/`
 -- *Slide End* --
@@ -527,13 +550,13 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide* --
 ### Part 4: Backfilling
 * Many schedulers and resource managers use a backfilling algorithm to improve system utilisation and maximise job throughout. 
-* When more resource intensive (e.g., multiple node) jobs are running it is possible that gaps ends up in the resource allocation. To fill these gaps a best effort is made for low-resource jobs to slot into these spaces.
+* When more resource intensive (e.g., multiple node) jobs are running it is possible that gaps ends up in the resource allocation.
 * For example, on an 8-core node, an 8 core job is running, a 4 core job is launched, then an 8 core job, then another 4 core job. The two 4 core jobs will run before the second 8 core job.
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 4: Memory Allocation
-* By default the scheduler will set memory equal to the total amount on a compute node divided by the number of cores requested. In some cases this might not be enough (e.g., very large dataset that needs to be loaded with low level of parallelisation).
+* By default the scheduler will set memory equal to the total amount on a compute node divided by the number of cores requested.
 * Additional memory can be allocated with the `--mem=[mem][M|G|T]` directive (entire job) or `--mem-per-cpu=[mem][M|G|T]` (per core). Maximum should be based around total cores -1 (for system processes). The --mem-per-cpu directive is for threads for OpenMP applications and processor ranks for MPI.
 -- *Slide End* --
 
@@ -556,7 +579,7 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide End* --
 
 -- *Slide* --
-### Part 5: File Formats
+### Part 5: Tarballs
 * A common data format is the "tarball", usually as a *.tgz or *.tar.gz file. This combines many other files.
 * The "table of contents" of a tarball can be checked with `tar tf $filename`
 * If suitable, the tarball can be extracted with `tar xvf $filename`.
@@ -591,7 +614,7 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide End* --
 
 -- *Slide* --
-### Part 6: Slurm Job Commands I
+### Part 6: Slurm Job Commands
 | Job Specification     | Slurm Command              | 
 |-----------------------|---------------------------:|
 |Script directive       |`#SBATCH`                   |
@@ -603,13 +626,13 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 -- *Slide End* --
 
 -- *Slide* --
-### Part 6: Slurm Job Commands II
+### Part 6: Slurm Job Commands
 | Job Specification     | Slurm Command              | 
 |-----------------------|---------------------------:|
 |Event Address          |`--mail-user=[address]`     |
 |Event Notification     |`--mail-type=[events]`      |
-|Memory Size            |`--mem=[mem][M|G|T]`        |
-|Proc Memory Size       |`--mem-per-cpu=[mem][M|G|T]`|
+|Memory Size            |`--mem=[mem][MGT]`        |
+|Proc Memory Size       |`--mem-per-cpu=[mem][MGT]`|
 -- *Slide End* --
 
 -- *Slide* --
