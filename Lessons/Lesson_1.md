@@ -10,7 +10,7 @@
 
 -- *Slide* --
 ### Slide Respository
-* A copy of these slides and sample code is available at: `https://github.com/UoM-ResPlat-DevOps/Bioinformatics`
+* A copy of these slides and sample code is available at: `https://github.com/UoM-ResPlat-DevOps/SpartanBioinformatics`
 * A copy of information about HPC at the University of Melbourne is available at `https://dashboard.hpc.unimelb.edu.au`. See also `man spartan` on the cluster and the `/usr/local/common/` directories for more help and code exammples.
 -- *Slide End* --
 
