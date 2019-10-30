@@ -24,7 +24,12 @@
 ### Part I: Helpdesk
 * Read the Message of the Day when you login!
 * If a user has problems with submitting a job, or needs a new application or extension to an existing application installed, or if their submissions are generated unexpected errors etc., an email can be sent to the helpdesk: `hpc­-support@unimelb.edu.au`. 
-* Do not email individual sysadmins; we need consolidated records. Please be informative about the error or issue. Separate tickst for separate issues; Don't try to use sudo!
+-- *Slide End* --
+
+-- *Slide* --
+### Part I: Helpdesk
+* Do not email individual sysadmins; we need consolidated records. Please be informative about the error or issue. Separate tickst for separate issues.
+* Don't try to use sudo! This is not a Debian/Ubuntu system, we don't (usually) use packaged for applications, and there's security issues!
 -- *Slide End* --
 
 -- *Slide* --
@@ -43,25 +48,33 @@
 -- *Slide* --
 ### Part 1: Clusters and Research Computing
 * Clustered computing is when two or more computers serve a single resource. This improves performance and provides redundancy in case of failure system. Typically commodity systems with a high-speed local network.
+-- *Slide End* --
+
+-- *Slide* --
+### Part 1: Clusters and Research Computing
 * Research computing is the software applications used by the scientific community to aid research. Does not necessarily equate with HPC; it is whatever researchers use and do. Note issues of reproducibility.
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 1: Parallel Computing
 * With a cluster architecture, applications can be more easily parallelised across them. *Data parallel*, running same task in parallel; the horse and cart example, Monte Carlo experiments. *Task parallel*, running independent tasks in parallel with communication; driving a car, molecular modelling.
+-- *Slide End* --
+
+-- *Slide* --
+### Part 1: Parallel Computing
 * Further examples of serial versus parallel; weather forecasting, aerodynamic design, fluid mechanics, radiation modelling, molecular dynamics, CGI rendering for popular movies, etc. Reality is a parallel system!
 -- *Slide End* --
 
 -- *Slide* --
-<img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/smartparallel.jpg" />
+<img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/smartparallel.jpg" height="400%" width="400%"/>
 -- *Slide End* --
 
 -- *Slide* --
 ### Part 1: HPC Cluster and Parallel Processing Components
 * A chassis or rack, containing multiple computer system units, interconnect, and providing power.
 * Computer system units or nodes, containing memory, local disk, and sockets.
-* Sockets contain a processor which has one or more cores which do the processing.
-* Logical processes have shared resources (e.g., memory) which may have multiple instruction stream threads.
+* Sockets contain a processor which has one or more cores.
+* Logical processes have shared resources which may have multiple instruction stream threads.
 -- *Slide End* --
 
 -- *Slide* --
@@ -83,7 +96,6 @@
 -- *Slide End* --
 
 -- *Slide* --
-### Part 1: Spartan Design
 <img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/spartanlayout.png" />
 -- *Slide End* --
 
@@ -92,13 +104,13 @@
 * Physical partition 37 nodes, 1,284 cores,  2 socket Intel E5-2643 v3 CPU with 6-core per socket, 3.4GHz, 254GB memory, 2x 1.2TB SAS drives, 2x 40GbE network Mellanox 2100. 
 * Cloud partition is 165 virtual machines with over 1,980 cores, dual CPU Intel(R) Xeon(R) Gold 6138 CPU, 2.00GHz, 10GBe Cisco Nexus. 
 * GPU partition for LIEF grant recipients, 1,752 core, 4 P100 Nvidia GPUs per node (3584 CUDA Cores)
-* Storage: 4.3PB `/scratch` NFS over RDMA, `/project` and `/home`.
+* Storage: 4.3PB NFS over RDMA
 -- *Slide End* --
 
 -- *Slide* --
 ### Part I: Accounts and Projects
 * Spartan uses its an authentication that is tied to the university Security Assertion Markup Language (SAML). The login URL is `https://dashboard.hpc.unimelb.edu.au/karaage`
-* Users on Spartan must belong to a project. Projects must be led by a University of Melbourne researcher (the "Principal Investigator") and are subject to approval by the Head of Research Compute Services. Participants in a project can be researchers or research support staff from anywhere.
+* Users on Spartan must belong to a project. Projects must be led by a University of Melbourne researcher (the "Principal Investigator") and are subject to approval by the Head of Research Compute Services.
 -- *Slide End* --
 
 -- *Slide* --
@@ -109,10 +121,10 @@
 
 -- *Slide* --
 ### Part I: Logging In
-* To log on to a HPC system, you will need a user account and password and a Secure Shell (ssh) client. Linux distributions almost always include SSH as part of the default installation as does 
+* To log on to a HPC system, you will need a user account and password and a Secure Shell (ssh) client. Linux distributions almost always include SSH.
+* Example: ssh lev@spartan.hpc.unimelb.edu.au
 Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http://putty.org). 
 * To transfer files use scp, WinSCP, Filezilla (`https://filezilla-project.org/`), or rsync.
-* Example login: `lev@spartan.hpc.unimelb.edu.au`
 -- *Slide End* --
 
 -- *Slide* --
@@ -123,7 +135,7 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 
 -- *Slide* --
 ### Part I: Data Transfers
-* Both SSH keys and SSH config are very useful for data transfers!\
+* Both SSH keys and SSH config are very useful for data transfers!
 * `https://dashboard.hpc.unimelb.edu.au/managing_data/` 
 -- *Slide End* --
 
@@ -131,7 +143,7 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 ### Part I: Latency, Bandwidth, Data Location
 * Latency is the speed of data transfer, bandwidth is the "width" of the "band" of data transfer. Using a road analogy, "latency" is the smoothness of the surface, "bandwidth" is the number of lanes.
 * Distance is a *very* important factor. Data for processing should be kept as close as possible to the processor.
-* As Grace Hopper used to say: "Mind your nanoseconds!" https://www.youtube.com/watch?v=JEpsKnWZrJ8
+* Grace Hopper on nanoseconds `https://www.youtube.com/watch?v=JEpsKnWZrJ8`
 -- *Slide End* --
 
 -- *Slide* --
@@ -156,8 +168,8 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 
 -- *Slide* --
 ### Part 2: File System Hierarchy
-* When a user logs in on a Linux or other UNIX-like system on the command line, they start in their home directory (`/home/<<username>>`). Explore file system hierarchy. Project directory in `/data/projects/<<projectID>>`.
 * "Everything in the UNIX system is a file" (Kernighan & Pike, 1984, 41). 
+* When a user logs in on a Linux or other UNIX-like system on the command line, they start in their home directory (`/home/<<username>>`); project directory in `/data/projects/<<projectID>>`.
 * See `https://swcarpentry.github.io/shell-novice/fig/standard-filesystem-hierarchy.svg`
 -- *Slide End* --
 
@@ -191,9 +203,9 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 ### Part 2: The Online Manual
 | Command             | Explanation                                                      |
 |:--------------------|:-----------------------------------------------------------------|
-|`man <command`       | Display the manual entry for the command                         |
+|`man <command>`      | Display the manual entry for the command                         |
 |`info <command>`     | A verbose description of the command                             |
-|`whatis <command>`  | A terse description of the command                               |
+|`whatis <command>`   | A terse description of the command                               |
 -- *Slide End* --
 
 -- *Slide* --
@@ -247,7 +259,7 @@ Mac OS 10.x. For MS-­Windows users, the free PuTTY client is recommended (http:
 To get a copy of the files from an external source to your home directory, you will probably want to use `wget`, `cURL`, or `git`, or `scp`.
 
 | Command           | Explanation                                                          |
-|:------------------|:--------------------------------------------------------------------:|
+|:------------------|:---------------------------------------------------------------------|
 | `wget URL`      | Non-interactive download of files over http, https, ftp etc.           |
 | `git clone URL` | Clone a repository into a new directory.                               |
 -- *Slide End* --
@@ -257,10 +269,10 @@ To get a copy of the files from an external source to your home directory, you w
 To copy a file from within a system use the `cp` command.
 
 | Command           | Explanation                                                          |
-|:------------------|:--------------------------------------------------------------------:|
-| `cp source destination`      | Copy a file from source to destination                    |
-| `cp -r source destination` | Recursive copy (e.g., a directory)		           |
-| `cp -a source destination` | Recursive copy as archive (permissions, links)		   |
+|:------------------|:---------------------------------------------------------------------|
+| `cp source destination`    | Copy a file from source to destination                      |
+| `cp -r source destination` | Recursive copy		                                   |
+| `cp -a source destination` | Archive copy (permissions, links)		           |
 -- *Slide End* --
 
 -- *Slide* --
@@ -268,10 +280,10 @@ To copy a file from within a system use the `cp` command.
 Use the tab key to help with filename completion and the `.` for current working directory (cwd).
 
 | Command           | Explanation                                                          |
-|:------------------|:--------------------------------------------------------------------:|
-|`cp /usr/local/common/Genomics/gattaca.txt .`     | Copy a file from source to destination.   |
-|`cp -r /usr/local/common/Genomics .`		| Copy the directory from source to destination. |
-|`cp -r /usr/local/common/HPCshells .` | Copy the directory from source to destination. |
+|:------------------|:---------------------------------------------------------------------|
+|`cp /usr/local/common/Genomics/gattaca.txt .`  | Copy a file   |
+|`cp -r /usr/local/common/Genomics .`	 | Copy the directory |
+|`cp -r /usr/local/common/HPCshells .` | Copy the directory |
 -- *Slide End* --
 
 -- *Slide* --
@@ -279,8 +291,8 @@ Use the tab key to help with filename completion and the `.` for current working
 To copy files to between systems desktop use SCP (secure copy protocol) or SFTP (secure file transfer protocol), combining the ssh and cp functionality. The `cp` options can also be used. The source or destination address should also require a remote shell login.
 
 | Command           | Explanation                                                          |
-|:------------------|:--------------------------------------------------------------------:|
-|`scp source.address:/path/ destination.address:/path/`| Copies files from an external network  |
+|:------------------|:--------------------------------------------------------------------|
+|`scp source.address:/path/ destination.address:/path/`| External copy |
 -- *Slide End* --
 
 -- *Slide* --
@@ -301,8 +313,7 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 
 -- *Slide* --
 ### Part 2: Synchronising Files and Directories
-* The `rsync -avz` command ensures that it is in archive mode (recursive, copies symlinks, preserves permissions), is verbose, and compresses on transmission. 
-* The --update restricts the copy only to files that are newer than the destination. 
+* The `rsync -avz` command ensures that it is in archive mode (recursive, copies symlinks, preserves permissions), is verbose, and compresses on transmission.  The `--update` restricts the copy only to files that are newer than the destination. 
 * Note that rsync is "trailing slash sensitive". A trailing / on a source means "copy the contents of this directory". Without a trailing slash it means "copy the directory".
 -- *Slide End* --
 
@@ -311,7 +322,7 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 * Rsync can be used in a synchronise mode with the --delete flag.  Consider this with the `-n`, or `--dry-run` options first!
 
 | Command           | Explanation                                                          |
-|:------------------|:--------------------------------------------------------------------:|
+|:------------------|:--------------------------------------------------------------------|
 | `rsync -avz --update source/ username@remotemachine:/path/to/destination| Synchronise, keep older files  |
 | `rsync -avz --delete source/ username@remotemachine:/path/to/destination| Synchronise, absolutely |
 -- *Slide End* --
@@ -333,8 +344,7 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 ### Part 2: File Differences
 * File differences can be determined by timestamp (e.g., `ls -l gattaca.txt braf/gattaca.txt`)
 * Content differences can be determined by the `diff` command (e.g., `diff gattaca.txt braf/gattaca.txt`)
-* For a side-by-side representation use the command `sdiff` instead.
-* The command `comm` can compare two files, lines by line (e.g., `comm gattaca.txt braf/gattaca.txt`).
+* For a side-by-side representation use the command `sdiff` or`comm` (e.g., `comm gattaca.txt braf/gattaca.txt`).
 -- *Slide End* --
 
 -- *Slide* --
@@ -380,7 +390,7 @@ BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This prot
 -- *Slide* --
 ### Part 3: Module Commands I
 | Command                         | Explanation                                            |
-|---------------------------------|:------------------------------------------------------:|
+|---------------------------------|:------------------------------------------------------|
 | `module help`                 | List of switches, commands and arguments for modules   |
 | `module avail`                | Lists all the modules which are available to be loaded.|
 | `module display <modulefile>` | Display paths etc for modulefile                       |
@@ -389,7 +399,7 @@ BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This prot
 -- *Slide* --
 ### Part 3: Module Commands I
 | Command                         | Explanation                                            |
-|---------------------------------|:------------------------------------------------------:|
+|---------------------------------|:------------------------------------------------------|
 | `module load <modulefile>`    | Loads paths etc to user's environment                  |
 | `module unload <modulefile>`  | Unloads paths etc from user's environment.             |
 | `module list`                 | lists all the modules currently loaded.                |
@@ -499,7 +509,7 @@ invoked and the resource requests altered e.g.,
 -- *Slide End* --
 
 -- *Slide* --
-<img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/cat-asleep-on-keyboard.jpg" width="100%" height="100%" title="Lazy cat" />
+<img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/cat-asleep-on-keyboard.jpg" width="75%" height="75%" title="Lazy cat" />
 ` https://dashboard.hpc.unimelb.edu.au/guides/script_generator/ `
 -- *Slide End* --
 
@@ -521,7 +531,7 @@ dataset10.csv
 
 -- *Slide* --
 ### Part 4: Interactive Jobs
-* An interactive job, based on the resource requests made on the command  line, puts the user on to a compute node. This is typically done if they user wants to run a  large script (and shouldn't do it on the login node), or wants to test or debug a job. The  following command would launch one node with two processors for ten minutes.
+* An interactive job, based on the resource requests made on the command  line, puts the user on to a compute node. This is typically done if they user wants to run a  large, intensive, script, or wants to test or debug a job. e.g.,
 `sinteractive ­­--nodes=1 --­­ntasks-­per-­node=2 --­­time=0:10:0`
 * Example and instructions at `/usr/local/common/interact`
 -- *Slide End* --
@@ -549,8 +559,7 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 
 -- *Slide* --
 ### Part 4: Backfilling
-* Many schedulers and resource managers use a backfilling algorithm to improve system utilisation and maximise job throughout. 
-* When more resource intensive (e.g., multiple node) jobs are running it is possible that gaps ends up in the resource allocation.
+* Many schedulers and resource managers use a backfilling algorithm to improve system utilisation and maximise job throughout. When more resource intensive (e.g., multiple node) jobs are running it is possible that gaps ends up in the resource allocation.
 * For example, on an 8-core node, an 8 core job is running, a 4 core job is launched, then an 8 core job, then another 4 core job. The two 4 core jobs will run before the second 8 core job.
 -- *Slide End* --
 
@@ -571,7 +580,7 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 * Compare the performance of NAMD/VMD Ubiquitin protein test case under `/usr/local/common/NAMD` under different configurations
 
 | Nodes and Tasks       | Partition             | Time                    | 
-|-----------------------|-----------------------|------------------------:|
+|-----------------------|-----------------------|-------------------------|
 |ntasks=4               | cloud                 |                         |
 |ntaks=8                | cloud                 |                         |
 |nodes=2, ntasks=16     | cloud                 |                         |
