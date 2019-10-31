@@ -77,6 +77,20 @@
 * To extract and uncompress the tarball : `tar xvf tarball.tar.bz2`
 </script></section>
 <section data-markdown><script type="text/template">
+### Part 1: Archiving and Compressing Files cont ...
+* But wait, there's more! A third common compression is LZMA2 which is used in xz files.
+* Like bzip2 efficient in size, slower in decompression speed.
+* To create a xz tarball: `tar cvfJ class.tar.xz class/`
+* To check the contents: `tar tf class.tar.xz` 
+* To extract and uncompress the tarball : `tar xvf class.tar.xz`
+</script></section>
+<section data-markdown><script type="text/template">
+### Part 1: Viewing tarballs
+* Some commands allow reading tarballs without extraction. 
+`zcat class.tgz | less` or `zless class.tgz` or `bzless` or `xzless`
+`zgrep '#include <mpi.h>' class.tgz| less` or `bzgrep` or `xzgrep`
+</script></section>
+<section data-markdown><script type="text/template">
 ### Part 1: Redirections and Tee
 * A core principle of UNIX-like operating systems is that the output of one program should be usable as the input to another.
 * The introductory lesson included basic commands for redirection, concatenation, and piping.
